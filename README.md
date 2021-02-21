@@ -1,2 +1,2 @@
-# Rig-Data-Simulator
-Fake Rig data
+# TCP-Server
+TCP Server to handle Rig Data
