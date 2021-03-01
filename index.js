@@ -9,11 +9,11 @@ const syncModels = async () => {
     db.MKY08RAW.sync();
 }
 
-
 syncModels().then(() => {
 
     let timer = setInterval(() => {
-        API.saveRig21();
+        let timeStamp = + new Date()
+        API.saveRig21(timeStamp);
         console.log("Entered")
     }, 1000);
 

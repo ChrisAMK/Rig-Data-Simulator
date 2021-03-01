@@ -1,8 +1,28 @@
 import MKY021 from "./models/mky021.js";
 
+function timeConverter(UNIX_timestamp){
+    var a = new Date(UNIX_timestamp);
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var year = a.getFullYear();
+    var month = months[a.getMonth()];
+    var date = a.getDate();
+    var hour = a.getHours();
+    var min = a.getMinutes();
+    var sec = a.getSeconds();
+    var time = {
+        date: date,
+        month: month,
+        year: year,
+        hour: (hour),
+        min: min,
+        sec: sec
+    };
+    return time;
+  }
+
 export default {
 
-    saveRig21: () => {
+    saveRig21: (timestamp) => {
 
         let postCalculations = {
             
@@ -32,8 +52,7 @@ export default {
             bitWeight: Math.random(6) * 100,
             driller: "Not Signed in"
         }
-        
-        
+        console.log(timestamp)
         MKY021.create({
             ts: postCalculations.ts,
             engineRpm: postCalculations.engineRpm,
@@ -59,7 +78,13 @@ export default {
             winchDownPressure: postCalculations.winchDownPressure,
             winchUpPressure: postCalculations.winchUpPressure,
             bitWeight: postCalculations.bitWeight,
-            driller: postCalculations.driller || "IN"
+            driller: postCalculations.driller || "IN",
+            year: timeConverter(timestamp).year,
+            month: timeConverter(timestamp).month,
+            date: timeConverter(timestamp).date,
+            hour: timeConverter(timestamp).hour,
+            minute: timeConverter(timestamp).min,
+            second: timeConverter(timestamp).sec
         }).then(() => console.log("Log Created"));
 
     }

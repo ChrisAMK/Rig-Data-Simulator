@@ -139,7 +139,37 @@ const MKY021RAW = sequelize.define("MKY021RAW", {
     type: 'TIMESTAMP',
     defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
     allowNull: false
-  }
+  },
+
+  year: {
+    type: Sequelize.DataTypes.STRING,
+    allowNull: true,
+  },
+
+  month: {
+    type: Sequelize.DataTypes.STRING,
+    allowNull: true,
+  },
+
+  date: {
+    type: Sequelize.DataTypes.STRING,
+    allowNull: true,
+  },
+
+  hour: {
+    type: Sequelize.DataTypes.STRING,
+    allowNull: true,
+  },
+
+  minute: {
+    type: Sequelize.DataTypes.STRING,
+    allowNull: true,
+  },
+
+  second: {
+    type: Sequelize.DataTypes.STRING,
+    allowNull: true,
+  },
 
 },
 {
