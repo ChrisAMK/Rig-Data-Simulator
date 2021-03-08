@@ -8,169 +8,171 @@ var sequelize = new Sequelize(config.database, config.username, config.password,
   // logging: false
 });
 
+const DataTypes = Sequelize.DataTypes;
+const literal = Sequelize.literal;
+
 const MKY021RAW = sequelize.define("MKY021RAW", {
 
   time: {
-      type: Sequelize.DataTypes.INTEGER,
-      allowNull: true
+    type: DataTypes.BIGINT,
+    allowNull: true
   },
 
-  engineRPM: {
-    type: Sequelize.DataTypes.INTEGER,
+  engineRpm: {
+    type: DataTypes.INTEGER,
     allowNull: true
   },
 
   oilPressure: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.DECIMAL,
     allowNull: true
   },
 
   engineHours: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.INTEGER,
     allowNull: true,
   },
 
   coolantTemp: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.DECIMAL,
     allowNull: true,
   },
 
   headPosition: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.DECIMAL,
     allowNull: true,
   },
 
   holeDepth: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.DECIMAL,
     allowNull: true,
   },
 
   rotationRpm: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.INTEGER,
     allowNull: true,
   },
 
   penetrationRate: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.DECIMAL,
     allowNull: true,
   },
 
   mastAngle: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.DECIMAL,
     allowNull: true,
   },
 
   deckRoll: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.DECIMAL,
     allowNull: true,
   },
 
   deckPitch: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.DECIMAL,
     allowNull: true,
   },
 
   headRackBackProxyStatus: {
-    type: Sequelize.DataTypes.BOOLEAN,
+    type: DataTypes.BOOLEAN,
     allowNull: true,
   },
 
   footClampPressureSwitch: {
-    type: Sequelize.DataTypes.BOOLEAN,
+    type: DataTypes.BOOLEAN,
     allowNull: true,
   },
 
   coolantLevelSensor: {
-    type: Sequelize.DataTypes.BOOLEAN,
+    type: DataTypes.BOOLEAN,
     allowNull: true,
   },
 
   rotationReversePressure: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.DECIMAL,
     allowNull: true,
   },
 
   rotationForwardPressure: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.DECIMAL,
     allowNull: true,
   },
 
   holdBackPressure: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.DECIMAL,
     allowNull: true,
   },
 
   pulldownPressure: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.DECIMAL,
     allowNull: true,
   },
 
   waterPressure: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.DECIMAL,
     allowNull: true,
   },
 
   mainPumpPressure: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.DECIMAL,
     allowNull: true,
   },
 
   winchDownPressure: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.DECIMAL,
     allowNull: true,
   },
 
   winchUpPressure: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.DECIMAL,
     allowNull: true,
   },
 
   bitWeight: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.DECIMAL,
     allowNull: true,
   },
 
   driller: {
-    type: Sequelize.DataTypes.STRING,
+    type: DataTypes.STRING,
     allowNull: true,
   },
 
   createdAt: {
     type: 'TIMESTAMP',
-    defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
+    defaultValue: literal('CURRENT_TIMESTAMP'),
     allowNull: false
   },
 
   year: {
-    type: Sequelize.DataTypes.STRING,
+    type: DataTypes.INTEGER,
     allowNull: true,
   },
 
   month: {
-    type: Sequelize.DataTypes.STRING,
+    type: DataTypes.STRING,
     allowNull: true,
   },
 
   date: {
-    type: Sequelize.DataTypes.STRING,
+    type: DataTypes.INTEGER,
     allowNull: true,
   },
 
   hour: {
-    type: Sequelize.DataTypes.STRING,
+    type: DataTypes.INTEGER,
     allowNull: true,
   },
 
   minute: {
-    type: Sequelize.DataTypes.STRING,
+    type: DataTypes.INTEGER,
     allowNull: true,
   },
 
   second: {
-    type: Sequelize.DataTypes.STRING,
+    type: DataTypes.INTEGER,
     allowNull: true,
   },
-
 },
 {
   timestamps: false

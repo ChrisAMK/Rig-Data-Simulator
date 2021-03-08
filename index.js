@@ -14,6 +14,7 @@ syncModels().then(() => {
     let timer = setInterval(() => {
         let timeStamp = + new Date()
         API.saveRig21(timeStamp);
+        API.saveRig8(timeStamp);
         console.log("Entered")
     }, 1000);
 

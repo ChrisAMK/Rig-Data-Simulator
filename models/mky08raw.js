@@ -8,134 +8,231 @@ var sequelize = new Sequelize(config.database, config.username, config.password,
   // logging: false
 });
 
+const DataTypes = Sequelize.DataTypes;
+const literal = Sequelize.literal;
 
 const MKY08RAW = sequelize.define("MKY08RAW", {
 
   time: {
-      type: Sequelize.DataTypes.INTEGER,
-      allowNull: true
+    type: DataTypes.BIGINT,
+    allowNull: true
   },
 
   engineRPM: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.INTEGER,
     allowNull: true
   },
 
   oilPressure: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.DECIMAL,
     allowNull: true
   },
 
   engineHours: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.INTEGER,
     allowNull: true,
   },
 
   coolantTemp: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.DECIMAL,
     allowNull: true,
   },
 
   headPosition: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.DECIMAL,
     allowNull: true,
   },
 
   holeDepth: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.DECIMAL,
     allowNull: true,
   },
 
   rotationRpm: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.INTEGER,
     allowNull: true,
   },
 
   penetrationRate: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.DECIMAL,
+    allowNull: true,
+  },
+
+  bitWeight: {
+    type: DataTypes.DECIMAL,
+    allowNull: true,
+  },
+
+  outsideTemp: {
+    type: DataTypes.DECIMAL,
     allowNull: true,
   },
 
   mastAngle: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.DECIMAL,
     allowNull: true,
   },
 
   deckRoll: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.DECIMAL,
     allowNull: true,
   },
 
   deckPitch: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.DECIMAL,
     allowNull: true,
   },
 
-  headRackBackProxyStatus: {
-    type: Sequelize.DataTypes.BOOLEAN,
+  rodLoaderPosition: {
+    type: DataTypes.BOOLEAN,
     allowNull: true,
   },
 
-  footClampPressureSwitch: {
-    type: Sequelize.DataTypes.BOOLEAN,
-    allowNull: true,
-  },
-
-  coolantLevelSensor: {
-    type: Sequelize.DataTypes.BOOLEAN,
+  headRefPosition: {
+    type: DataTypes.BOOLEAN,
     allowNull: true,
   },
 
   rotationReversePressure: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.DECIMAL,
     allowNull: true,
   },
 
   rotationForwardPressure: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.DECIMAL,
     allowNull: true,
   },
 
   holdBackPressure: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.DECIMAL,
     allowNull: true,
   },
 
   pulldownPressure: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.DECIMAL,
     allowNull: true,
   },
 
   waterPressure: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.DECIMAL,
     allowNull: true,
   },
 
   mainPumpPressure: {
-    type: Sequelize.DataTypes.INTEGER,
+    type: DataTypes.DECIMAL,
     allowNull: true,
   },
 
-  winchDownPressure: {
-    type: Sequelize.DataTypes.INTEGER,
+  driller: {
+    type: DataTypes.STRING,
     allowNull: true,
   },
 
-  winchUpPressure: {
-    type: Sequelize.DataTypes.INTEGER,
+  compressorSumpPressure: {
+    type: DataTypes.DECIMAL,
+    allowNull: true,
+  },
+
+  compressorDischargeTemperature: {
+    type: DataTypes.DECIMAL,
+    allowNull: true,
+  },
+
+  compressorLinePressure: {
+    type: DataTypes.DECIMAL,
+    allowNull: true,
+  },
+
+  compressorInterstagePressure: {
+    type: DataTypes.DECIMAL,
+    allowNull: true,
+  },
+
+  DownholeAirPressure: {
+    type: DataTypes.DECIMAL,
+    allowNull: true,
+  },
+
+  engineOilTemp: {
+    type: DataTypes.DECIMAL,
+    allowNull: true,
+  },
+
+  engineTorque: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+  },
+
+  intercoolerTemp: {
+    type: DataTypes.DECIMAL,
+    allowNull: true,
+  },
+
+  totalFuelUsed: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+  },
+
+  intakeManifoldTemp: {
+    type: DataTypes.DECIMAL,
+    allowNull: true,
+  },
+
+  turboRpm: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+  },
+
+  electricalPotential: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+  },
+
+ engineOilLevel: {
+    type: DataTypes.INTEGER,
     allowNull: true,
   },
 
   createdAt: {
     type: 'TIMESTAMP',
-    defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
+    defaultValue: literal('CURRENT_TIMESTAMP'),
     allowNull: false
-  }
+  },
+
+  year: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+  },
+
+  month: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+
+  date: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+  },
+
+  hour: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+  },
+
+  minute: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+  },
+
+  second: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+  },
 
 },
-{
-  timestamps: false
-}
+  {
+    timestamps: false
+  }
 );
 
 export default MKY08RAW;

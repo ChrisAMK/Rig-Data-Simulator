@@ -1,7 +1,7 @@
 { 
   "username": "root",
   "password": "root",
-  "database": "Rig021",
+  "database": "drillmonitoring",
   "host": "localhost",
   "dialect": "mysql"
 }
